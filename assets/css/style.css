@@ -1336,4 +1336,28 @@ body.nav-active { overflow: hidden; }
     padding-inline: 120px;
   }
 
+
+  
+  /**
+   * Article updates from Friend
+   */
+
+  
+  .article-title .container {
+  max-width: 900px;
+}
+
+.article-title h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.article-meta {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
 }
