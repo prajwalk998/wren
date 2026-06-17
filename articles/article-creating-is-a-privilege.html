@@ -164,6 +164,8 @@
       </div>
     </section>
 
+    <div id="footer"></div>
+
   </main>
 
   <!-- SIDEBAR -->
@@ -191,39 +193,7 @@
   </script>
   
   <!-- Footer -->
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const nameInput = document.querySelector(".footer .input-wrapper:nth-of-type(1) .input-field");
-  const emailInput = document.querySelector(".footer .input-wrapper:nth-of-type(2) .input-field");
-  const subscribeBtn = document.querySelector(".footer .btn-primary");
-
-  subscribeBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-
-    // Simple email regex
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (name === "") {
-      alert("Please enter your name.");
-      return;
-    }
-
-    if (!emailPattern.test(email)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
-
-    alert(`Thanks ${name}! You have successfully subscribed.`);
-    
-    // Clear fields
-    nameInput.value = "";
-    emailInput.value = "";
-  });
-});
-</script>
+  
 
   <script src="../assets/js/script.js"></script>
 

@@ -41,6 +41,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
+
 /**
  * SLIDER (SAFE VERSION)
  */
@@ -95,4 +96,18 @@ if (slider && sliderContainer && sliderPrevBtn && sliderNextBtn) {
     totalSlidableItems = updateLimits();
     moveSlider();
   });
+}
+
+/**
+ * FOOTER LOAD (GLOBAL)
+ */
+const footerEl = document.getElementById("footer");
+
+if (footerEl) {
+  fetch("../components/footer.html")
+    .then(res => res.text())
+    .then(html => {
+      footerEl.innerHTML = html;
+    })
+    .catch(err => console.error("Footer load failed:", err));
 }
