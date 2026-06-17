@@ -111,3 +111,44 @@ if (footerEl) {
     })
     .catch(err => console.error("Footer load failed:", err));
 }
+
+
+
+
+function loadComponent(id, path, callback) {
+  fetch(path)
+    .then(res => res.text())
+    .then(html => {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = html;
+
+      if (callback) callback();
+    })
+    .catch(err => console.error(`Failed to load ${path}:`, err));
+}
+
+/* NAVBAR */
+function loadNavbar() {
+  loadComponent("navbar", "../components/navbar.html", () => {
+    if (typeof initNavbar === "function") {
+      initNavbar();
+    }
+  });
+}
+
+/* SIDEBAR */
+function loadSidebar() {
+  loadComponent("popular-sidebar", "../components/popular-posts.html");
+}
+
+/* FOOTER (optional, since you're using it) */
+function loadFooter() {
+  loadComponent("footer", "../components/footer.html");
+}
+
+/* AUTO INIT */
+document.addEventListener("DOMContentLoaded", () => {
+  loadNavbar();
+  loadSidebar();
+  loadFooter();
+});

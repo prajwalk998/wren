@@ -164,38 +164,16 @@
       </div>
     </section>
 
-    <div id="footer"></div>
-
+    
+  
   </main>
 
-  <!-- SIDEBAR -->
-  <script>
-    fetch("../components/popular-posts.html")
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById("popular-sidebar").innerHTML = html;
-      })
-      .catch(err => console.error("Sidebar load failed:", err));
-  </script>
+  <section class="section">
+    <div id="footer"></div>
+  </section>
+      
 
-  <!-- NAVBAR -->
-  <script>
-    fetch("../components/navbar.html")
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById("navbar").innerHTML = html;
-
-        if (typeof initNavbar === "function") {
-          initNavbar();
-        }
-      })
-      .catch(err => console.error("Navbar load failed:", err));
-  </script>
-  
-  <!-- Footer -->
-  
-
-  <script src="../assets/js/script.js"></script>
+<script src="../assets/js/script.js"></script>
 
 </body>
 </html>
