@@ -228,7 +228,9 @@ body.nav-active { overflow: hidden; }
   font-weight: var(--weight-extraBold);
 }
 
-.headline-2 { font-size: var(--fontSize-2); }
+.headline-2 {
+  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+}
 
 .headline-3 {
   font-size: var(--fontSize-2);
@@ -292,8 +294,14 @@ body.nav-active { overflow: hidden; }
 .section { padding-block: var(--section-padding); }
 
 .section-text {
-  font-size: var(--fontSize-3);
-  margin-block-end: 70px;
+  line-height: 1.65;
+  margin: 0;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.section-text + .section-text {
+  margin-top: 2rem;
 }
 
 .grid-list {
@@ -1336,28 +1344,22 @@ body.nav-active { overflow: hidden; }
     padding-inline: 120px;
   }
 
-
-  
-  /**
-   * Article updates from Friend
+/**
+   * Modification from a Friend
    */
 
+  .recent-post .container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .recent-post .container {
+    grid-template-columns: 1fr;
+  }
+}
   
-  .article-title .container {
-  max-width: 900px;
-}
-
-.article-title h1 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.article-meta {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
+ 
 }
