@@ -171,12 +171,14 @@ html {
 
 body {
   background-color: var(--bg-oxford-blue-2);
-  color: var(--text-shadow-blue);
+  color: var(--text-columbia-blue);
   font-family: var(--fontFamily-noto_sans);
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   line-height: var(--lineHeight-4);
   overflow-y: overlay;
 }
+
+
 
 body.nav-active { overflow: hidden; }
 
@@ -711,6 +713,8 @@ body.nav-active { overflow: hidden; }
 .recent-post .container {
   display: grid;
   gap: 50px;
+  align-items: start;
+  overflow: visible;
 }
 
 .recent-post-card {
@@ -1395,8 +1399,13 @@ body.nav-active { overflow: hidden; }
   margin-bottom: 5px;
 }
 
+.article-title,
+.headline {
+  color: var(--text-alice-blue);
+}
+
 .article-section-title {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--text-alice-blue);
   margin-top: 40px;
@@ -1505,4 +1514,10 @@ body.nav-active { overflow: hidden; }
 /* Pause on hover */
 .quotes-scroller:hover .quotes-track {
   animation-play-state: paused;
+}
+
+#popular-sidebar {
+  position: sticky;
+  top: 120px; /* adjust for your fixed header */
+  align-self: start;
 }
