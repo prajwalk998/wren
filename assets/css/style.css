@@ -1528,8 +1528,8 @@ body.nav-active { overflow: hidden; }
 ========================= */
 
 .masonry {
-  column-count: 4;
-  column-gap: 16px;
+  column-count: 5;
+  column-gap: 10px;
 }
 
 .masonry-img {
@@ -1567,6 +1567,10 @@ body.nav-active { overflow: hidden; }
   outline: 2px solid var(--bg-carolina-blue);
 }
 
+.gallery-page .container {
+  max-width: 80%;
+  padding-inline: 24px;
+}
 
 /* =========================
    LIGHTBOX PREVIEW
