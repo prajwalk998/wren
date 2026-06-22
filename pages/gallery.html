@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gallery</title>
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+
+<body>
+
+<header class="header" data-header>
+  <div id="navbar"></div>
+</header>
+
+<main>
+
+  <!-- HERO (same as article) -->
+  <div class="container article-header-text">
+
+    <section class="article-hero">
+      <div class="article-hero-media">
+        <img src="../assets/images/gallery-hero.jpg" alt="Gallery">
+      </div>
+    </section>
+
+    <section class="article-header-text">
+      <h1 class="headline headline-1">
+      <span class="span">Gallery</span>
+    </h1>
+      <p class="article-subtitle">A collection of memories</p>
+    </section>
+
+  </div>
+
+  <!-- CONTENT -->
+  <section class="recent-post section">
+    <div class="container">
+
+      <article class="article-content">
+
+        <p class="article-section-title">Gallery</p>
+
+        <div class="masonry">
+            <img src="../assets/images/topic-1.png" alt="" class="masonry-img">
+            <img src="../assets/images/topic-2.png" alt="" class="masonry-img">
+            <img src="../assets/images/topic-3.png" alt="" class="masonry-img">
+            <img src="../assets/images/topic-4.png" alt="" class="masonry-img">
+            <img src="../assets/images/topic-5.png" alt="" class="masonry-img">
+            <img src="../assets/images/featured-1.png" alt="" class="masonry-img">
+            <img src="../assets/images/featured-2.png" alt="" class="masonry-img">
+            <img src="../assets/images/featured-3.png" alt="" class="masonry-img">
+            <img src="../assets/images/recent-post-1.jpg" alt="" class="masonry-img">
+            <img src="../assets/images/recent-post-2.jpg" alt="" class="masonry-img">
+            <img src="../assets/images/recent-post-3.jpg" alt="" class="masonry-img">
+            <img src="../assets/images/insta-post-1.png" alt="" class="masonry-img">
+
+        </div>
+
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<script>
+  const images = document.querySelectorAll(".masonry-img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const closeBtn = document.getElementById("lightboxClose");
+
+  images.forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.classList.add("active");
+      lightboxImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove("active");
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      lightbox.classList.remove("active");
+    }
+  });
+</script>
+
+
+<script src="../assets/js/script.js"></script>
+
+</body>
+</html>
